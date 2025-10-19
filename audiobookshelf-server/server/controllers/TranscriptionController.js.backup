@@ -1,0 +1,170 @@
+const Logger = require('../Logger')
+
+class TranscriptionController {
+  constructor() {
+    this.transcriptionManager = null
+    this.database = null
+    this.socketAuth = null
+  }
+
+  // Middleware para inyectar dependencias
+  middleware(transcriptionManager, database, socketAuth) {
+    this.transcriptionManager = transcriptionManager
+    this.database = database
+    this.socketAuth = socketAuth
+    return this
+  }
+
+  /**
+   * POST: /api/items/:id/transcribe
+   * Iniciar transcripción de un audiolibro
+   */
+  async startTranscription(req, res) {
+    Logger.info('[TranscriptionController] startTranscription called')
+    
+    try {
+      const { id: libraryItemId } = req.params
+      const { language = 'spanish', model = 'large-v3', force = false } = req.body
+
+      if (!req.user.canUpdate) {
+        return res.status(403).json({ error: 'No tienes permisos para generar transcripciones' })
+      }
+
+      // Verificar que el TranscriptionManager esté inicializado
+      if (!this.transcriptionManager || !this.transcriptionManager.isInitialized) {
+        return res.status(503).json({ 
+          error: 'El sistema de transcripción no está disponible. Verifique que Whisper esté instalado.' 
+        })
+      }
+
+      // Responder inmediatamente que se inició el proceso
+      res.json({ 
+        message: 'Transcripción iniciada', 
+        status: 'starting',
+        language,
+        model,
+        libraryItemId
+      })
+
+    } catch (error) {
+      Logger.error('[TranscriptionController] Error iniciando transcripción:', error)
+      res.status(500).json({ error: 'Error interno del servidor' })
+    }
+  }
+
+  /**
+   * GET: /api/items/:id/transcription/status
+   * Obtener estado de la transcripción
+   */
+  async getTranscriptionStatus(req, res) {
+    try {
+      const { id: libraryItemId } = req.params
+      
+      if (!req.user.canRead) {
+        return res.status(403).json({ error: 'No tienes permisos para ver el estado de transcripciones' })
+      }
+
+      if (!this.transcriptionManager) {
+        return res.json({ status: 'not_available' })
+      }
+
+      const status = this.transcriptionManager.getTranscriptionStatus(libraryItemId)
+      res.json(status)
+
+    } catch (error) {
+      Logger.error('[TranscriptionController] Error obteniendo estado de transcripción:', error)
+      res.status(500).json({ error: 'Error interno del servidor' })
+    }
+  }
+
+  /**
+   * GET: /api/items/:id/subtitles
+   * Listar subtítulos disponibles
+   */
+  async getSubtitles(req, res) {
+    try {
+      const { id: libraryItemId } = req.params
+      
+      if (!req.user.canRead) {
+        return res.status(403).json({ error: 'No tienes permisos para ver subtítulos' })
+      }
+
+      // Por ahora retornamos lista vacía
+      res.json({ subtitles: [] })
+
+    } catch (error) {
+      Logger.error('[TranscriptionController] Error obteniendo lista de subtítulos:', error)
+      res.status(500).json({ error: 'Error interno del servidor' })
+    }
+  }
+
+  // Métodos placeholder simplificados
+  async downloadSubtitle(req, res) {
+    res.status(404).json({ error: 'Funcionalidad no implementada aún' })
+  }
+
+  async serveSubtitleVTT(req, res) {
+    res.status(404).json({ error: 'Funcionalidad no implementada aún' })
+  }
+
+  async deleteSubtitles(req, res) {
+    res.status(404).json({ error: 'Funcionalidad no implementada aún' })
+  }
+
+  async uploadSubtitles(req, res) {
+    res.status(404).json({ error: 'Funcionalidad no implementada aún' })
+  }
+
+
+
+  async getAvailableModels(req, res) {
+    try {
+      if (!this.transcriptionManager) {
+        return res.json({ 
+          models: [],
+          whisperAvailable: false
+        })
+      }
+
+      const models = this.transcriptionManager.availableModels.map(model => ({
+        name: model,
+        displayName: model.charAt(0).toUpperCase() + model.slice(1),
+        status: 'available',
+        recommended: model === 'large-v3'
+      }))
+
+      res.json({ 
+        models,
+        currentModel: this.transcriptionManager.config.model,
+        whisperAvailable: this.transcriptionManager.isInitialized
+      })
+    } catch (error) {
+      Logger.error('[TranscriptionController] Error obteniendo modelos:', error)
+      res.status(500).json({ error: 'Error obteniendo modelos disponibles' })
+    }
+  }
+
+  async getSupportedLanguages(req, res) {
+    try {
+      const languages = [
+        { code: 'es', name: 'Español', recommended: true },
+        { code: 'en', name: 'English' },
+        { code: 'fr', name: 'Français' },
+        { code: 'de', name: 'Deutsch' },
+        { code: 'it', name: 'Italiano' },
+        { code: 'pt', name: 'Português' },
+        { code: 'auto', name: 'Detección automática' }
+      ]
+
+      res.json({ 
+        languages,
+        currentLanguage: this.transcriptionManager?.config?.language || 'es'
+      })
+    } catch (error) {
+      Logger.error('[TranscriptionController] Error obteniendo idiomas:', error)
+      res.status(500).json({ error: 'Error obteniendo idiomas soportados' })
+    }
+  }
+}
+
+module.exports = new TranscriptionController()

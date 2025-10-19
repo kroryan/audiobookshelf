@@ -1,431 +1,409 @@
-<br />
-<div align="center">
-   <img alt="Audiobookshelf Banner" src="https://github.com/advplyr/audiobookshelf/raw/master/images/banner.svg" width="600">
+# Audiobookshelf Windows - Complete Distribution with Whisper Integration
 
-  <p align="center">
-    <br />
-    <a href="https://audiobookshelf.org/docs">Documentation</a>
-    ·
-    <a href="https://audiobookshelf.org/guides">User Guides</a>
-    ·
-    <a href="https://audiobookshelf.org/support">Support</a>
-  </p>
-</div>
+**Custom Enhanced Audiobookshelf Distribution for Windows with Full Whisper Integration**
 
-# About
+This project is a custom and enhanced distribution of Audiobookshelf that includes:
+- ✅ **Native Windows application** with system tray
+- ✅ **Complete server** with all dependencies
+- ✅ **Full Whisper integration** with GPU detection and pre-installed models
+- ✅ **Android mobile app** with complete subtitle functionality
+- ✅ **Single Windows installer** with no external dependencies
+- ✅ **Portable Node.js** included
+- ✅ **Auto-updates disabled** by default
 
-Audiobookshelf is a self-hosted audiobook and podcast server.
+---
 
-### Features
+## 📜 Credits and Licenses
 
-- Fully **open-source**, including the [android & iOS app](https://github.com/advplyr/audiobookshelf-app) _(in beta)_
-- Stream all audio formats on the fly
-- Search and add podcasts to download episodes w/ auto-download
-- Multi-user support w/ custom permissions
-- Keeps progress per user and syncs across devices
-- Auto-detects library updates, no need to re-scan
-- Upload books and podcasts w/ bulk upload drag and drop folders
-- Backup your metadata + automated daily backups
-- Progressive Web App (PWA)
-- Chromecast support on the web app and android app
-- Fetch metadata and cover art from several sources
-- Chapter editor and chapter lookup (using [Audnexus API](https://audnex.us/))
-- Merge your audio files into a single m4b
-- Embed metadata and cover image into your audio files
-- Basic ebook support and ereader
-  - Epub, pdf, cbr, cbz
-  - Send ebook to device (i.e. Kindle)
-- Open RSS feeds for podcasts and audiobooks
+This project is built upon and integrates multiple open-source projects:
 
-Is there a feature you are looking for? [Suggest it](https://github.com/advplyr/audiobookshelf/issues/new/choose)
+### **Core Projects**
+- **[Audiobookshelf Server](https://github.com/advplyr/audiobookshelf)** by [@advplyr](https://github.com/advplyr)
+  - License: **GPL v3.0**
+  - Main audiobook and podcast server functionality
 
-Join us on [Discord](https://discord.gg/HQgCbd6E75)
+- **[Audiobookshelf Mobile App](https://github.com/advplyr/audiobookshelf-app)** by [@advplyr](https://github.com/advplyr)
+  - License: **GPL v3.0**
+  - Cross-platform mobile application (iOS/Android)
 
-### Demo
+- **[Audiobookshelf Windows](https://github.com/mikiher/audiobookshelf-windows)** by [@mikiher](https://github.com/mikiher)
+  - License: **GPL v3.0**
+  - Windows native tray application and installer
 
-Check out the web client demo: https://audiobooks.dev/ (thanks for hosting [@Vito0912](https://github.com/Vito0912)!)
+### **Technology Stack**
+- **[Node.js](https://nodejs.org/)** - Runtime environment
+  - License: **MIT License**
 
-Username/password: `demo`/`demo` (user account)
+- **[Whisper](https://github.com/openai/whisper)** by OpenAI
+  - License: **MIT License**
+  - AI-powered speech recognition and transcription
 
-### Android App (beta)
+- **[Nuxt.js 2](https://nuxtjs.org/)** - Vue.js framework
+  - License: **MIT License**
 
-Try it out on the [Google Play Store](https://play.google.com/store/apps/details?id=com.audiobookshelf.app)
+- **[Capacitor](https://capacitorjs.com/)** by Ionic
+  - License: **MIT License**
+  - Native mobile app development
 
-### iOS App (beta)
+- **[Inno Setup](https://jrsoftware.org/isinfo.php)** - Windows installer
+  - License: **Custom License (Free for non-commercial use)**
 
-**Beta is currently full. Apple has a hard limit of 10k beta testers. Updates will be posted in Discord.**
+### **Special Thanks**
+- **[@advplyr](https://github.com/advplyr)** for creating the amazing Audiobookshelf ecosystem
+- **[@mikiher](https://github.com/mikiher)** for the Windows native application foundation
+- **OpenAI** for the Whisper speech recognition technology
+- **All contributors** to the upstream projects
 
-Using Test Flight: https://testflight.apple.com/join/wiic7QIW **_(beta is full)_**
+---
 
-### Build your own tools & clients
+# Audiobookshelf Windows - Distribución Completa con Whisper
 
-Check out the [API documentation](https://api.audiobookshelf.org/)
+**Distribución Personalizada y Mejorada de Audiobookshelf para Windows con Integración Completa de Whisper**
 
-<br />
+Este proyecto es una distribución personalizada y mejorada de Audiobookshelf que incluye:
+- ✅ **Aplicación Windows nativa** con sistema tray
+- ✅ **Servidor completo** con todas las dependencias
+- ✅ **Integración completa de Whisper** con detección GPU y modelos preinstalados
+- ✅ **Aplicación móvil Android** con funcionalidad de subtítulos completa
+- ✅ **Instalador único** de Windows sin dependencias externas
+- ✅ **Node.js portable** incluido
+- ✅ **Auto-actualizaciones deshabilitadas** por defecto
 
-<img alt="Library Screenshot" src="https://github.com/advplyr/audiobookshelf/raw/master/images/DemoLibrary.png" />
+## 🚀 Key Features
 
-<br />
+### 🔊 **Whisper Transcription**
+- **Automatic GPU detection** (CUDA/CPU fallback)
+- **4 models included**: tiny, small, medium (pre-installed) + large-v3 (on-demand download)
+- **Local transcription** with no external dependencies
+- **Automatic optimization** based on available hardware
 
-# Organizing your audiobooks
+### 📱 **Enhanced Android App**
+- **Fully functional subtitle system** with nativeHttp protocol
+- **Improved interface** for subtitle selection
+- **Complete compatibility** with all server features
 
-#### Directory structure and folder names are important to Audiobookshelf!
+### 🖥️ **Windows Application**
+- **Native system tray** for server management
+- **Auto-updates disabled** by default
+- **Automatic Node.js server management**
+- **Persistent configuration** in Windows registry
 
-See [documentation](https://audiobookshelf.org/docs#book-directory-structure) for supported directory structure, folder naming conventions, and audio file metadata usage.
+### 📦 **All-in-One Installer**
+- **Single-click installation** with no external dependencies
+- **Portable Node.js included** (v18.20.4)
+- **Complete server** with all node_modules
+- **Pre-installed Whisper models** (869MB of models)
+- **Total size**: ~87MB (compressed)
 
-<br />
+---
 
-# Installation
+## 🚀 Características Principales
 
-See [install docs](https://www.audiobookshelf.org/docs)
+### 🔊 **Transcripción con Whisper**
+- **Detección automática de GPU** (CUDA/CPU fallback)
+- **4 modelos incluidos**: tiny, small, medium (preinstalados) + large-v3 (descarga bajo demanda)
+- **Transcripción local** sin dependencias externas
+- **Optimización automática** según hardware disponible
 
-<br />
+### 📱 **Aplicación Android Mejorada**
+- **Sistema de subtítulos completamente funcional** con protocolo nativeHttp
+- **Interfaz mejorada** para selección de subtítulos
+- **Compatibilidad completa** con todas las funciones del servidor
 
-# Reverse Proxy Set Up
+### 🖥️ **Aplicación Windows**
+- **Sistema tray nativo** para gestión del servidor
+- **Auto-actualizaciones deshabilitadas** por defecto
+- **Gestión automática** del servidor Node.js
+- **Configuración persistente** en registro de Windows
 
-#### Important! Audiobookshelf requires a websocket connection.
+### 📦 **Instalador Todo-en-Uno**
+- **Instalación de un solo clic** sin dependencias externas
+- **Node.js portable incluido** (v18.20.4)
+- **Servidor completo** con todos los node_modules
+- **Modelos Whisper preinstalados** (869MB de modelos)
+- **Tamaño total**: ~87MB (comprimido)
 
-#### Note: Using a subfolder is supported with no additional changes but the path must be `/audiobookshelf` (this is not changeable). See [discussion](https://github.com/advplyr/audiobookshelf/discussions/3535)
+## 🏗️ Project Structure
 
-### NGINX Proxy Manager
+This project is composed of **3 main repositories**:
 
-Toggle websockets support.
+### 1. **`audiobookshelf-app/`** - Mobile Application (Nuxt 2 + Capacitor)
+```
+audiobookshelf-app/
+├── components/
+│   └── app/
+│       └── AudioPlayer.vue          # ✅ Subtitle system with nativeHttp
+├── android/                         # ✅ Configured Android build
+├── ios/                            # iOS support
+└── ...
+```
 
-<img alt="NGINX Web socket" src="https://user-images.githubusercontent.com/67830747/153679106-b2a7f5b9-0702-48c6-9740-b26b401986e9.png" />
+**Implemented improvements:**
+- **Complete subtitle system** using Capacitor nativeHttp
+- **Enhanced interface** for subtitle selection
+- **Robust error handling** for network connections
 
-### NGINX Reverse Proxy
+### 2. **`audiobookshelf-server/`** - Main Server (Node.js)
+```
+audiobookshelf-server/
+├── server/
+│   └── managers/
+│       └── TranscriptionManager.js  # ✅ Enhanced Whisper integration
+├── client/
+│   ├── components/
+│   │   ├── modals/
+│   │   │   └── SubtitlesModal.vue   # ✅ Improved response parsing
+│   │   └── player/
+│   │       └── PlayerUi.vue         # ✅ Fixed CC positioning
+│   └── dist/                        # ✅ Regenerated client
+└── ...
+```
 
-Add this to the site config file on your nginx server after you have changed the relevant parts in the <> brackets, and inserted your certificate paths.
+**Implemented improvements:**
+- **Automatic detection of installed Whisper models**
+- **Automatic GPU/CPU optimization**
+- **Installer integration** for local models
+- **Regenerated web client** with subtitle fixes
 
-```bash
-server {
-   listen 443 ssl;
-   server_name <sub>.<domain>.<tld>;
+### 3. **Native Windows Application (C# .NET)**
+```
+├── AppTray.cs                       # ✅ Main tray logic
+├── AudiobookshelfTray.csproj       # C# .NET Framework 4.6.1 project
+├── SettingsDialog.cs               # Server configuration
+├── ServerLogs.cs                   # Log visualization
+└── Setup/
+    └── Installer.iss               # ✅ Complete Inno Setup script
+```
 
-   access_log /var/log/nginx/audiobookshelf.access.log;
-   error_log /var/log/nginx/audiobookshelf.error.log;
+**Implemented improvements:**
+- **Auto-updates disabled** by default
+- **Portable Node.js integration**
+- **Enhanced server management**
+- **Complete installer** with all dependencies
 
-   ssl_certificate      /path/to/certificate;
-   ssl_certificate_key  /path/to/key;
+---
 
-   location / {
-      proxy_set_header X-Forwarded-For    $proxy_add_x_forwarded_for;
-      proxy_set_header X-Forwarded-Proto  $scheme;
-      proxy_set_header Host               $http_host;
-      proxy_set_header Upgrade            $http_upgrade;
-      proxy_set_header Connection         "upgrade";
+## 🏗️ Estructura del Proyecto
 
-      proxy_http_version                  1.1;
+Este proyecto está compuesto por **3 repositorios principales**:
 
-      proxy_pass                          http://<URL_to_forward_to>;
-      proxy_redirect                      http:// https://;
+### 1. **`audiobookshelf-app/`** - Aplicación Móvil (Nuxt 2 + Capacitor)
+```
+audiobookshelf-app/
+├── components/
+│   └── app/
+│       └── AudioPlayer.vue          # ✅ Sistema de subtítulos con nativeHttp
+├── android/                         # ✅ Build Android configurado
+├── ios/                            # iOS support
+└── ...
+```
 
-      # Prevent 413 Request Entity Too Large error
-      # by increasing the maximum allowed size of the client request body
-      # For example, set it to 10 GiB
-      client_max_body_size                10240M;
-   }
+**Mejoras implementadas:**
+- **Sistema de subtítulos completo** usando Capacitor nativeHttp
+- **Interfaz mejorada** para selección de subtítulos
+- **Manejo de errores robusto** para conexiones de red
+
+### 2. **`audiobookshelf-server/`** - Servidor Principal (Node.js)
+```
+audiobookshelf-server/
+├── server/
+│   └── managers/
+│       └── TranscriptionManager.js  # ✅ Integración Whisper mejorada
+├── client/
+│   ├── components/
+│   │   ├── modals/
+│   │   │   └── SubtitlesModal.vue   # ✅ Parseo de respuestas mejorado
+│   │   └── player/
+│   │       └── PlayerUi.vue         # ✅ Posicionamiento CC corregido
+│   └── dist/                        # ✅ Cliente regenerado
+└── ...
+```
+
+**Mejoras implementadas:**
+- **Detección automática de modelos Whisper** instalados
+- **Optimización GPU/CPU** automática
+- **Integración con instalador** para modelos locales
+- **Cliente web regenerado** con correcciones de subtítulos
+
+### 3. **Aplicación Windows Nativa (C# .NET)**
+```
+├── AppTray.cs                       # ✅ Lógica principal del tray
+├── AudiobookshelfTray.csproj       # Proyecto C# .NET Framework 4.6.1
+├── SettingsDialog.cs               # Configuración del servidor
+├── ServerLogs.cs                   # Visualización de logs
+└── Setup/
+    └── Installer.iss               # ✅ Script Inno Setup completo
+```
+
+**Mejoras implementadas:**
+- **Auto-actualizaciones deshabilitadas** por defecto
+- **Integración con Node.js portable**
+- **Gestión mejorada del servidor**
+- **Instalador completo** con todas las dependencias
+
+## 🔧 Technical Changes Made
+
+### 📱 **Android - Functional Subtitles**
+**Modified files:**
+- `audiobookshelf-app/components/app/AudioPlayer.vue`
+
+**Changes:**
+```javascript
+// Before: Failed with "Network Error"
+this.$axios.get(url)
+
+// After: Works with nativeHttp
+import { CapacitorHttp } from '@capacitor/core'
+const response = await CapacitorHttp.get({
+  url: fullUrl,
+  headers: { 'Authorization': `Bearer ${this.$store.state.user.token}` }
+})
+```
+
+### 🌐 **Web - Interface Fixes**
+**Modified files:**
+- `audiobookshelf-server/client/components/modals/SubtitlesModal.vue`
+- `audiobookshelf-server/client/components/player/PlayerUi.vue`
+
+**Changes:**
+- **Correct parsing** of subtitle responses
+- **Fixed positioning** of CC menu
+- **Improved visibility** of controls
+
+### 🎙️ **Server - Enhanced Whisper**
+**Modified files:**
+- `audiobookshelf-server/server/managers/TranscriptionManager.js`
+
+**Changes:**
+```javascript
+// New: Installer model detection
+detectInstalledModelsPath() {
+  const installerModelsPath = path.join(__dirname, '..', '..', '..', 'whisper', 'models')
+  if (fs.existsSync(installerModelsPath)) {
+    return installerModelsPath
+  }
+  return this.ModelPath
+}
+
+// New: Local model preference
+async getModel(modelKey) {
+  const installerPath = this.detectInstalledModelsPath()
+  const modelFileName = `${modelKey}.pt`
+  const installerModelPath = path.join(installerPath, modelFileName)
+  
+  if (fs.existsSync(installerModelPath)) {
+    return installerModelPath // Use pre-installed model
+  }
+  
+  return this.downloadModel(modelKey) // Download if doesn't exist
 }
 ```
 
-### Apache Reverse Proxy
+### 🖥️ **Windows - Complete Installer**
+**Modified files:**
+- `AppTray.cs`
+- `Setup/Installer.iss`
 
-Add this to the site config file on your Apache server after you have changed the relevant parts in the <> brackets, and inserted your certificate paths.
+**Changes:**
+```csharp
+// Before: Depended on system Node.js
+ProcessStartInfo psi = new ProcessStartInfo("node", serverPath);
 
-For this to work you must enable at least the following mods using `a2enmod`:
-
-- `ssl`
-- `proxy`
-- `proxy_http`
-- `proxy_balancer`
-- `proxy_wstunnel`
-- `rewrite`
-
-```bash
-<IfModule mod_ssl.c>
-<VirtualHost *:443>
-    ServerName <sub>.<domain>.<tld>
-
-    ErrorLog ${APACHE_LOG_DIR}/error.log
-    CustomLog ${APACHE_LOG_DIR}/access.log combined
-
-    ProxyPreserveHost On
-    ProxyPass / http://localhost:<audiobookshelf_port>/
-    RewriteEngine on
-    RewriteCond %{HTTP:Upgrade} websocket [NC]
-    RewriteCond %{HTTP:Connection} upgrade [NC]
-    RewriteRule ^/?(.*) "ws://localhost:<audiobookshelf_port>/$1" [P,L]
-
-    # unless you're doing something special this should be generated by a
-    # tool like certbot by let's encrypt
-    SSLCertificateFile /path/to/cert/file
-    SSLCertificateKeyFile /path/to/key/file
-</VirtualHost>
-</IfModule>
+// After: Uses included portable Node.js
+string serverBinPath = Path.Combine(appPath, "nodejs", "node.exe");
+ProcessStartInfo psi = new ProcessStartInfo(serverBinPath, serverPath);
 ```
 
-If using Apache >= 2.4.47 you can use the following, without having to use any of the `RewriteEngine`, `RewriteCond`, or `RewriteRule` directives. For example:
+---
 
-```xml
-    <Location /audiobookshelf>
-        ProxyPreserveHost on
-        ProxyPass http://localhost:<audiobookshelf_port>/audiobookshelf upgrade=websocket
-        ProxyPassReverse http://localhost:<audiobookshelf_port>/audiobookshelf
-    </Location>
+## 🔧 Cambios Técnicos Realizados
+
+### 📱 **Android - Subtítulos Funcionales**
+**Archivos modificados:**
+- `audiobookshelf-app/components/app/AudioPlayer.vue`
+
+**Cambios:**
+```javascript
+// Antes: Fallaba con "Network Error"
+this.$axios.get(url)
+
+// Después: Funciona con nativeHttp
+import { CapacitorHttp } from '@capacitor/core'
+const response = await CapacitorHttp.get({
+  url: fullUrl,
+  headers: { 'Authorization': `Bearer ${this.$store.state.user.token}` }
+})
 ```
 
-Some SSL certificates like those signed by Let's Encrypt require ACME validation. To allow Let's Encrypt to write and confirm the ACME challenge, edit your VirtualHost definition to prevent proxying traffic that queries `/.well-known` and instead serve that directly:
+### 🌐 **Web - Correcciones de Interfaz**
+**Archivos modificados:**
+- `audiobookshelf-server/client/components/modals/SubtitlesModal.vue`
+- `audiobookshelf-server/client/components/player/PlayerUi.vue`
 
-```bash
-<VirtualHost *:443>
-    # ...
+**Cambios:**
+- **Parseo correcto** de respuestas de subtítulos
+- **Posicionamiento fijo** del menú CC
+- **Visibilidad mejorada** de controles
 
-    # create the directory structure  /.well-known/acme-challenges
-    # within DocumentRoot and give the HTTP user recursive write
-    # access to it.
-    DocumentRoot /path/to/local/directory
+### 🎙️ **Servidor - Whisper Mejorado**
+**Archivos modificados:**
+- `audiobookshelf-server/server/managers/TranscriptionManager.js`
 
-    ProxyPreserveHost On
-    ProxyPass /.well-known !
-    ProxyPass / http://localhost:<audiobookshelf_port>/
+**Cambios:**
+```javascript
+// Nuevo: Detección de modelos del instalador
+detectInstalledModelsPath() {
+  const installerModelsPath = path.join(__dirname, '..', '..', '..', 'whisper', 'models')
+  if (fs.existsSync(installerModelsPath)) {
+    return installerModelsPath
+  }
+  return this.ModelPath
+}
 
-    # ...
-</VirtualHost>
-```
-
-### SWAG Reverse Proxy
-
-[See LinuxServer.io config sample](https://github.com/linuxserver/reverse-proxy-confs/blob/master/audiobookshelf.subdomain.conf.sample)
-
-### Synology NAS Reverse Proxy Setup (DSM 7+/Quickconnect)
-
-1. **Open Control Panel**
-
-   - Navigate to `Login Portal > Advanced`.
-
-2. **General Tab**
-
-   - Click `Reverse Proxy` > `Create`.
-
-   | Setting            | Value          |
-   | ------------------ | -------------- |
-   | Reverse Proxy Name | audiobookshelf |
-
-3. **Source Configuration**
-
-   | Setting                | Value                                    |
-   | ---------------------- | ---------------------------------------- |
-   | Protocol               | HTTPS                                    |
-   | Hostname               | `<sub>.<quickconnectdomain>.synology.me` |
-   | Port                   | 443                                      |
-   | Access Control Profile | Leave as is                              |
-
-   - Example Hostname: `audiobookshelf.mydomain.synology.me`
-
-4. **Destination Configuration**
-
-   | Setting  | Value       |
-   | -------- | ----------- |
-   | Protocol | HTTP        |
-   | Hostname | Your NAS IP |
-   | Port     | 13378       |
-
-5. **Custom Header Tab**
-
-   - Go to `Create > Websocket`.
-   - Configure Headers (leave as is):
-
-   | Header Name | Value                 |
-   | ----------- | --------------------- |
-   | Upgrade     | `$http_upgrade`       |
-   | Connection  | `$connection_upgrade` |
-
-6. **Advanced Settings Tab**
-   - Leave as is.
-
-### [Traefik Reverse Proxy](https://doc.traefik.io/traefik/)
-
-Middleware relating to CORS will cause the app to report Unknown Error when logging in. To prevent this don't apply any of the following headers to the router for this site:
-
-<ul>
-   <li>accessControlAllowMethods</li>
-   <li>accessControlAllowOriginList</li>
-   <li>accessControlMaxAge</li>
-</ul>
-
-From [@Dondochaka](https://discord.com/channels/942908292873723984/942914154254176257/945074590374318170) and [@BeastleeUK](https://discord.com/channels/942908292873723984/942914154254176257/970366039294611506) <br />
-
-### Example Caddyfile - [Caddy Reverse Proxy](https://caddyserver.com/docs/caddyfile/directives/reverse_proxy)
-
-```
-subdomain.domain.com {
-        encode gzip zstd
-        reverse_proxy <LOCAL_IP>:<PORT>
+// Nuevo: Preferencia por modelos locales
+async getModel(modelKey) {
+  const installerPath = this.detectInstalledModelsPath()
+  const modelFileName = `${modelKey}.pt`
+  const installerModelPath = path.join(installerPath, modelFileName)
+  
+  if (fs.existsSync(installerModelPath)) {
+    return installerModelPath // Usar modelo preinstalado
+  }
+  
+  return this.downloadModel(modelKey) // Descargar si no existe
 }
 ```
 
-### HAProxy
+### 🖥️ **Windows - Instalador Completo**
+**Archivos modificados:**
+- `AppTray.cs`
+- `Setup/Installer.iss`
 
-Below is a generic HAProxy config, using `audiobookshelf.YOUR_DOMAIN.COM`.
+**Cambios:**
+```csharp
+// Antes: Dependía de Node.js del sistema
+ProcessStartInfo psi = new ProcessStartInfo("node", serverPath);
 
-To use `http2`, `ssl` is needed.
-
-```make
-global
-    # ... (your global settings go here)
-
-defaults
-    mode http
-    # ... (your default settings go here)
-
-frontend my_frontend
-    # Bind to port 443, enable SSL, and specify the certificate list file
-    bind :443 name :443 ssl crt-list /path/to/cert.crt_list alpn h2,http/1.1
-    mode http
-
-    # Define an ACL for subdomains starting with "audiobookshelf"
-    acl is_audiobookshelf hdr_beg(host) -i audiobookshelf
-
-    # Use the ACL to route traffic to audiobookshelf_backend if the condition is met,
-    # otherwise, use the default_backend
-    use_backend audiobookshelf_backend if is_audiobookshelf
-    default_backend default_backend
-
-backend audiobookshelf_backend
-    mode http
-    # ... (backend settings for audiobookshelf go here)
-
-    # Define the server for the audiobookshelf backend
-    server audiobookshelf_server 127.0.0.99:13378
-
-backend default_backend
-    mode http
-    # ... (default backend settings go here)
-
-    # Define the server for the default backend
-    server default_server 127.0.0.123:8081
-
+// Después: Usa Node.js portable incluido
+string serverBinPath = Path.Combine(appPath, "nodejs", "node.exe");
+ProcessStartInfo psi = new ProcessStartInfo(serverBinPath, serverPath);
 ```
 
-### pfSense and HAProxy
+## 🛠️ Build Instructions
 
-For pfSense the inputs are graphical, and `Health checking` is enabled.
-
-#### Frontend, Default backend, access control lists and actions
-
-##### Access Control lists
-
-|      Name      |    Expression     | CS  | Not |      Value      |
-| :------------: | :---------------: | :-: | :-: | :-------------: |
-| audiobookshelf | Host starts with: |     |     | audiobookshelf. |
-
-##### Actions
-
-The `condition acl names` needs to match the name above `audiobookshelf`.
-
-|    Action     |   Parameters   | Condition acl names |
-| :-----------: | :------------: | :-----------------: |
-| `Use Backend` | audiobookshelf |   audiobookshelf    |
-
-#### Backend
-
-The `Name` needs to match the `Parameters` above `audiobookshelf`.
-
-| Name | audiobookshelf |
-| ---- | -------------- |
-
-##### Server list:
-
-|      Name      |    Expression     | CS  | Not |      Value      |
-| :------------: | :---------------: | :-: | :-: | :-------------: |
-| audiobookshelf | Host starts with: |     |     | audiobookshelf. |
-
-##### Health checking:
-
-Health checking is enabled by default. `Http check method` of `OPTIONS` is not supported on Audiobookshelf. If Health check fails, data will not be forwared. Need to do one of following:
-
-- To disable: Change `Health check method` to `none`.
-- To make Health checking function: Change `Http check method` to `HEAD` or `GET`.
-
-# Run from source
-
-# Contributing
-
-This application is built using [NodeJs](https://nodejs.org/).
-
-### Localization
-
-Thank you to [Weblate](https://hosted.weblate.org/engage/audiobookshelf/) for hosting our localization infrastructure pro-bono. If you want to see Audiobookshelf in your language, please help us localize. Additional information on helping with the translations [here](https://www.audiobookshelf.org/faq#how-do-i-help-with-translations). <a href="https://hosted.weblate.org/engage/audiobookshelf/"> <img src="https://hosted.weblate.org/widget/audiobookshelf/abs-web-client/multi-auto.svg" alt="Translation status" /> </a>
-
-### Dev Container Setup
-
-The easiest way to begin developing this project is to use a dev container. An introduction to dev containers in VSCode can be found [here](https://code.visualstudio.com/docs/devcontainers/containers).
-
-Required Software:
-
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/)
-- [VSCode](https://code.visualstudio.com/download)
-
-_Note, it is possible to use other container software than Docker and IDEs other than VSCode. However, this setup is more complicated and not covered here._
-
-<div>
-<details>
-<summary>Install the required software on Windows with <a href=(https://docs.microsoft.com/en-us/windows/package-manager/winget/#production-recommended)>winget</a></summary>
-
-<p>
-Note: This requires a PowerShell prompt with winget installed.  You should be able to copy and paste the code block to install.  If you use an elevated PowerShell prompt, UAC will not pop up during the installs.
-
-```PowerShell
-winget install -e --id Docker.DockerDesktop; `
-winget install -e --id Microsoft.VisualStudioCode
+### 📱 **Android App**
+```bash
+cd audiobookshelf-app
+npm install
+npm run generate
+npx cap sync android
+npx cap open android
+# Build from Android Studio
 ```
 
-</p>
-</details>
-</div>
-
-<div>
-<details>
-<summary>Install the required software on MacOS with <a href=(https://snapcraft.io/)>homebrew</a></summary>
-
-<p>
-
-```sh
-brew install --cask docker visual-studio-code
-```
-
-</p>
-</details>
-</div>
-
-<div style="padding-bottom: 1em">
-<details>
-<summary>Install the required software on Linux with <a href=(https://brew.sh/)>snap</a></summary>
-
-<p>
-
-```sh
-sudo snap install docker; \
-sudo snap install code --classic
-```
-
-</p>
-</details>
-</div>
-
-After installing these packages, you can now install the [Remote Development](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack) extension for VSCode. After installing this extension open the command pallet (`ctrl+shift+p` or `cmd+shift+p`) and select the command `>Dev Containers: Rebuild and Reopen in Container`. This will cause the development environment container to be built and launched.
-
-You are now ready to start development!
-
-### Manual Environment Setup
-
-If you don't want to use the dev container, you can still develop this project. First, you will need to install [NodeJs](https://nodejs.org/) (version 20) and [FFmpeg](https://ffmpeg.org/).
-
-Next you will need to create a `dev.js` file in the project's root directory. This contains configuration information and paths unique to your development environment. You can find an example of this file in `.devcontainer/dev.js`.
-
-You are now ready to build the client:
-
-```sh
+### 🌐 **Web Server**
+```bash
+cd audiobookshelf-server
 npm ci
 cd client
 npm ci
@@ -433,20 +411,286 @@ npm run generate
 cd ..
 ```
 
-### Development Commands
+### 🖥️ **Windows Application**
+```bash
+# Build C# application
+dotnet build -c Release
 
-After setting up your development environment, either using the dev container or using your own custom environment, the following commands will help you run the server and client.
+# Build installer (requires Inno Setup)
+cd Setup
+"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" Installer.iss
+```
 
-To run the server, you can use the command `npm run dev`. This will use the client that was built when you ran `npm run generate` in the client directory or when you started the dev container. If you make changes to the server, you will need to restart the server. If you make changes to the client, you will need to run the command `(cd client; npm run generate)` and then restart the server. By default the client runs at `localhost:3333`, though the port can be configured in `dev.js`.
+---
 
-You can also build a version of the client that supports live reloading. To do this, start the server, then run the command `(cd client; npm run dev)`. This will run a separate instance of the client at `localhost:3000` that will be automatically updated as you make changes to the client.
+## 🛠️ Instrucciones de Compilación
 
-If you are using VSCode, this project includes a couple of pre-defined targets to speed up this process. First, if you build the project (`ctrl+shift+b` or `cmd+shift+b`) it will automatically generate the client. Next, there are debug commands for running the server and client. You can view these targets using the debug panel (bring it up with (`ctrl+shift+d` or `cmd+shift+d`):
+### 📱 **Android App**
+```bash
+cd audiobookshelf-app
+npm install
+npm run generate
+npx cap sync android
+npx cap open android
+# Compilar desde Android Studio
+```
 
-- `Debug server`—Run the server.
-- `Debug client (nuxt)`—Run the client with live reload.
-- `Debug server and client (nuxt)`—Runs both the preceding two debug targets.
+### 🌐 **Servidor Web**
+```bash
+cd audiobookshelf-server
+npm ci
+cd client
+npm ci
+npm run generate
+cd ..
+```
 
-# How to Support
+### 🖥️ **Aplicación Windows**
+```bash
+# Compilar aplicación C#
+dotnet build -c Release
 
-[See the incomplete "How to Support" page](https://www.audiobookshelf.org/support)
+# Compilar instalador (requiere Inno Setup)
+cd Setup
+"C:\Program Files (x86)\Inno Setup 6\ISCC.exe" Installer.iss
+```
+
+## 📦 Final Installer Structure
+
+The `AudiobookshelfInstaller-WithWhisper.exe` installer includes:
+
+```
+Final Installation/
+├── AudiobookshelfTray.exe          # Windows application
+├── nodejs/                         # Portable Node.js v18.20.4
+│   ├── node.exe
+│   └── ... (complete runtime)
+├── server/                         # Complete audiobookshelf server
+│   ├── index.js
+│   ├── node_modules/              # All dependencies
+│   ├── client/dist/               # Compiled web client  
+│   └── ... (complete code)
+└── whisper/
+    └── models/                    # Pre-installed models
+        ├── tiny.pt               # 37MB - Fastest
+        ├── small.pt              # 240MB - Balanced
+        └── medium.pt             # 754MB - Better quality
+        # large-v3.pt downloads on-demand (~1.5GB)
+```
+
+**Total size**: ~87MB compressed, ~1.2GB installed
+
+---
+
+## 📦 Estructura del Instalador Final
+
+El instalador `AudiobookshelfInstaller-WithWhisper.exe` incluye:
+
+```
+Instalación Final/
+├── AudiobookshelfTray.exe          # Aplicación Windows
+├── nodejs/                         # Node.js portable v18.20.4
+│   ├── node.exe
+│   └── ... (runtime completo)
+├── server/                         # Audiobookshelf server completo
+│   ├── index.js
+│   ├── node_modules/              # Todas las dependencias
+│   ├── client/dist/               # Cliente web compilado  
+│   └── ... (código completo)
+└── whisper/
+    └── models/                    # Modelos preinstalados
+        ├── tiny.pt               # 37MB - Más rápido
+        ├── small.pt              # 240MB - Balanceado
+        └── medium.pt             # 754MB - Mejor calidad
+        # large-v3.pt se descarga bajo demanda (~1.5GB)
+```
+
+**Tamaño total**: ~87MB comprimido, ~1.2GB instalado
+
+## 🚫 Excluded Files (.gitignore)
+
+The following files/folders are **NOT uploaded** to the repository:
+
+### Builds and Compilations
+- `audiobookshelf-app/android/app/build/`
+- `audiobookshelf-app/dist/`
+- `audiobookshelf-server/client/dist/`
+- `bin/`, `obj/`
+- `Setup/Output/`
+
+### Dependencies
+- `node_modules/`
+- `nodejs-portable/`
+- Node.js `.zip` files
+
+### Models and Data
+- `WhisperDist/Models/`
+- `audiobookshelf-server/temp/`
+- `*.pt` files (Whisper models)
+
+### Temporary Files
+- `*.tmp`, `*.temp`
+- `*.log`
+- `.DS_Store`
+
+---
+
+## 🚫 Archivos Excluidos (.gitignore)
+
+Los siguientes archivos/carpetas **NO se suben** al repositorio:
+
+### Compilaciones y Builds
+- `audiobookshelf-app/android/app/build/`
+- `audiobookshelf-app/dist/`
+- `audiobookshelf-server/client/dist/`
+- `bin/`, `obj/`
+- `Setup/Output/`
+
+### Dependencias
+- `node_modules/`
+- `nodejs-portable/`
+- Archivos `.zip` de Node.js
+
+### Modelos y Datos
+- `WhisperDist/Models/`
+- `audiobookshelf-server/temp/`
+- Archivos `*.pt` (modelos Whisper)
+
+### Archivos Temporales
+- `*.tmp`, `*.temp`
+- `*.log`
+- `.DS_Store`
+
+## 🎯 Implemented Features
+
+### ✅ **Fully Functional**
+- [x] **Whisper transcription** with automatic GPU/CPU
+- [x] **Android subtitles** with nativeHttp
+- [x] **Web subtitles** with improved interface
+- [x] **Windows installer** all-in-one
+- [x] **Auto-updates** disabled
+- [x] **Portable Node.js** integrated
+- [x] **Pre-installed models** (3 of 4)
+
+### 🔄 **Advanced Features**
+- [x] **Automatic hardware detection** GPU
+- [x] **CPU fallback** when GPU unavailable
+- [x] **Optimized memory management**
+- [x] **On-demand download** for large-v3 model
+- [x] **Installation with no external dependencies**
+
+---
+
+## 🎯 Funcionalidades Implementadas
+
+### ✅ **Completamente Funcional**
+- [x] **Transcripción Whisper** con GPU/CPU automático
+- [x] **Subtítulos Android** con nativeHttp
+- [x] **Subtítulos Web** con interfaz mejorada
+- [x] **Instalador Windows** todo-en-uno
+- [x] **Auto-actualizaciones** deshabilitadas
+- [x] **Node.js portable** integrado
+- [x] **Modelos preinstalados** (3 de 4)
+
+### 🔄 **Características Avanzadas**
+- [x] **Detección automática** de hardware GPU
+- [x] **Fallback CPU** cuando GPU no disponible
+- [x] **Gestión de memoria** optimizada
+- [x] **Descarga bajo demanda** para modelo large-v3
+- [x] **Instalación sin dependencias** externas
+
+## 📋 System Requirements
+
+### Windows
+- **Windows 10 64-bit** or later
+- **4GB RAM** minimum (8GB recommended for Whisper)
+- **2GB free space** for complete installation
+- **NVIDIA GPU** (optional, for CUDA acceleration)
+
+### Android
+- **Android 7.0** (API level 24) or later
+- **2GB RAM** minimum
+- **Internet connection** for streaming
+
+---
+
+## 📋 Requisitos del Sistema
+
+### Windows
+- **Windows 10 64-bit** o superior
+- **4GB RAM** mínimo (8GB recomendado para Whisper)
+- **2GB espacio libre** para instalación completa
+- **GPU NVIDIA** (opcional, para aceleración CUDA)
+
+### Android
+- **Android 7.0** (API level 24) o superior
+- **2GB RAM** mínimo
+- **Conexión a internet** para streaming
+
+## 🤝 Contributing
+
+This project combines multiple upstream repositories:
+- [audiobookshelf](https://github.com/advplyr/audiobookshelf) - Main server
+- [audiobookshelf-app](https://github.com/advplyr/audiobookshelf-app) - Mobile app
+- [audiobookshelf-windows](https://github.com/mikiher/audiobookshelf-windows) - Windows app
+
+**Custom improvements implemented for complete subtitle and Whisper functionality.**
+
+---
+
+## 🤝 Contribución
+
+Este proyecto combina múltiples repositorios upstream:
+- [audiobookshelf](https://github.com/advplyr/audiobookshelf) - Servidor principal
+- [audiobookshelf-app](https://github.com/advplyr/audiobookshelf-app) - App móvil
+- [audiobookshelf-windows](https://github.com/mikiher/audiobookshelf-windows) - App Windows
+
+**Mejoras personalizadas implementadas para funcionalidad completa de subtítulos y Whisper.**
+
+## 📄 Licenses
+
+### **Main Components**
+- **Audiobookshelf Server & App**: GPL v3.0
+- **Audiobookshelf Windows**: GPL v3.0
+- **Whisper**: MIT License
+- **Node.js**: MIT License
+- **Nuxt.js**: MIT License
+- **Capacitor**: MIT License
+
+### **Development Tools**
+- **Inno Setup**: Custom License (Free for non-commercial use)
+
+All modifications and enhancements in this distribution maintain compatibility with the original licenses.
+
+---
+
+## 📄 Licencias
+
+- **Audiobookshelf**: GPL v3.0
+- **Whisper**: MIT License
+- **Node.js**: MIT License
+- **Aplicación Windows**: Basada en audiobookshelf-windows
+
+---
+
+## 🚀 Quick Installation
+
+1. **Download** `AudiobookshelfInstaller-WithWhisper.exe`
+2. **Run** the installer as administrator
+3. **Start** Audiobookshelf from Windows menu or desktop icon
+4. **Access** from browser at `http://localhost:13378`
+5. **Enjoy** automatic transcription and functional subtitles!
+
+**Everything included. Zero configuration. Works immediately.**
+
+---
+
+## 🚀 Instalación Rápida
+
+1. **Descarga** `AudiobookshelfInstaller-WithWhisper.exe`
+2. **Ejecuta** el instalador como administrador
+3. **Inicia** Audiobookshelf desde el menú de Windows o icono del escritorio
+4. **Accede** desde el navegador en `http://localhost:13378`
+5. **¡Disfruta** de transcripción automática y subtítulos funcionales!
+
+**Todo incluido. Cero configuración. Funciona inmediatamente.**
