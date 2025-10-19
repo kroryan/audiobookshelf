@@ -1,4 +1,4 @@
-# Audiobookshelf Windows - Complete Distribution with Whisper Integration
+# Audiobookshelf Windows - Complete Distribution with Whisper Integration  [![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/kroryan/audiobookshelf)
 
 **Custom Enhanced Audiobookshelf Distribution for Windows with Full Whisper Integration**
 
